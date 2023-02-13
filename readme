@@ -1,0 +1,12 @@
+D'abord j'ai construit le site sur deux composants Majeurs qui sont : ReservationForm et ReservationList
+
+Le premier composant représente un formulaire de réservation pour un restaurant. Il importe les modules React et useNavigate du module react-router-dom. Le composant utilise useState pour gérer les states pour les champs du formulaire tels que le nom, le prénom, la date, l'heure, le tour de service, la zone, la quantité (nombre d'invité), les notes des clients et enfin le statut.
+Lorsque le formulaire est validé en cliquant sur le bouton Envoyer, la fonction handleSubmit est appelée. Elle empêche le comportement par défaut de l'événement de soumission et incrémente un compteur qui est stocké dans le localStorage. Elle récupère les données entrées dans le formulaire pour les stocker dans l'objet enteredData.
+Ensuite, le composant appelle la fonction props.onSaveEnteredData en lui passant enteredData en argument. Cette fonction doit être fournie en tant que props au composant par le composant parent. Elle est censée sauvegarder les données entrées pour une utilisation ultérieure.
+Enfin, la fonction navigate de useNavigate est appelée avec l'argument '/list' pour naviguer vers une autre page dans l'application.
+
+Le deuxième composant nous permet d'afficher la liste de réservations déjà inséré auparavant par mock data, ainsi que celle reinsaigner sur le formulaire en utilisant des fonctionnalités telles que le filtrage, la recherche et le tri.
+Le composant ReservationList définit un état pour chaque fonctionnalité. Par exemple, searchTerm est un état qui enregistre la valeur entrée par l'utilisateur dans le champ de recherche. Le composant utilise plusieurs fonctions de gestion d'état telles que setSearchTerm pour mettre à jour les états en fonction des actions de l'utilisateur.
+Le composant utilise également useEffect pour implémenter les fonctionnalités de filtrage et de tri. Chaque fois que les états liés à ces fonctionnalités sont mis à jour, useEffect effectue une nouvelle filtration ou un nouveau tri des réservations pour correspondre aux nouveaux paramètres.
+Enfin, le composant définit plusieurs fonctions de gestion d'événements qui sont appelées lorsque l'utilisateur effectue une action, telles que handleSearch qui est appelée lorsque l'utilisateur entre une valeur dans le champ de recherche.
+

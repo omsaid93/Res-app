@@ -13,19 +13,20 @@ function ReservationCard(props) {
   const [quantity, setQuantity] = useState('');
   const [guestNotes, setGuestNotes] = useState('');
   const [status, setStatus] = useState('');
-  const [counter, setCounter] = useState(20);
+  const [counter, setCounter] = useState(parseInt(localStorage.getItem('counter')) || 20);
 
   const navigate = useNavigate();
 
   const handleSubmit = event => {
     event.preventDefault();
     setCounter(counter + 1);
+    localStorage.setItem('counter', counter + 1);
 
     // Do something with the form data, such as send a request to an API
     console.log({ firstName, lastName, dateTo, dateFrom, shift, area });
-    
+
     const enteredData = {
-      id: counter+1,
+      id: counter + 1,
       businessDate,
       status,
       shift,
@@ -44,68 +45,64 @@ function ReservationCard(props) {
     // onSaveEnteredData={enteredDataHandler}
 
     navigate('/list')
-    
+
   };
 
   return (
     <div >
       <form onSubmit={handleSubmit} className='center' >
-        <div  className="inputbox">
-          <label>First name:</label>
-          <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
-        </div>
-        <div  className="inputbox">
-          <label>Last name:</label>
-          <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
+        <div className="inputbox">
+          <input type="text" required={true} value={firstName} placeholder='First name' onChange={e => setFirstName(e.target.value)} />
         </div>
         <div className="inputbox">
-        <label>quantity</label>
-        <input type="number" value={quantity} onChange={e => setQuantity(e.target.value)} />
+          <input type="text" required={true} value={lastName} placeholder='Last name' onChange={e => setLastName(e.target.value)} />
         </div>
         <div className="inputbox">
-        <label>businessDate</label>
-        <input type="date" value={businessDate} onChange={e => setBusinessDate(e.target.value)} />
+          <input type="number" required={true} value={quantity} placeholder='Quantity' onChange={e => {
+            if (e.target.value >= 0) {
+              setQuantity(e.target.value);
+            }
+          }} />
         </div>
         <div className="inputbox">
-        <label>from:</label>
-        <input type="datetime-local" value={dateFrom.dates} onChange={e => setDateFrom(e.target.value)} />
+          <label>businessDate</label>
+          <input type="date" required={true} value={businessDate} onChange={e => setBusinessDate(e.target.value)} />
         </div>
         <div className="inputbox">
-        <label>to:</label>
-        <input type="datetime-local" value={dateTo} onChange={e => setDateTo(e.target.value)} />
+          <label>from:</label>
+          <input type="datetime-local" required={true} value={dateFrom.dates} onChange={e => setDateFrom(e.target.value)} />
         </div>
         <div className="inputbox">
-        <label> Shift:</label>
-        <select value={shift} onChange={e => setShift(e.target.value)}>
-          <option value="BREAKFAST">BREAKFAST</option>
-          <option value="LUNCH">LUNCH</option>
-          <option value="DINNER">DINNER</option>
-        </select>
+          <label>to:</label>
+          <input type="datetime-local" required={true} value={dateTo} onChange={e => setDateTo(e.target.value)} />
         </div>
         <div className="inputbox">
-        <label>Area:</label>
-        <select value={area} onChange={e => setArea(e.target.value)}>
-          <option value="BAR">BAR</option>
-          <option value="MAIN ROOM">MAIN ROOM</option>
-        </select>
+          <label> Shift:</label>
+          <select value={shift} onChange={e => setShift(e.target.value)}>
+            <option defaultValue="BREAKFAST">BREAKFAST</option>
+            <option value="LUNCH">LUNCH</option>
+            <option value="DINNER">DINNER</option>
+          </select>
         </div>
         <div className="inputbox">
-        <label>status:</label>
-        <select value={status} onChange={e => setStatus(e.target.value)}>
-          <option value="CONFIRMED">CONFIRMED</option>
-          <option value="NOT CONFIRMED">NOT CONFIRMED</option>
-          <option value="SEATED">SEATED</option>
-          <option value="CHECKED OUT">CHECKED OUT</option>
-        </select>
+          <label>Area:</label>
+          <select value={area} onChange={e => setArea(e.target.value)}>
+            <option defaultValue="BAR">BAR</option>
+            <option value="MAIN ROOM">MAIN ROOM</option>
+          </select>
         </div>
         <div className="inputbox">
-        <label>guestNotes:</label>
-        <input type="text" value={guestNotes} onChange={e => setGuestNotes(e.target.value)} />
+          <label>status:</label>
+          <select value={status} onChange={e => setStatus(e.target.value)}>
+            <option value="CONFIRMED">CONFIRMED</option>
+            <option value="NOT CONFIRMED">NOT CONFIRMED</option>
+            <option value="SEATED">SEATED</option>
+            <option value="CHECKED OUT">CHECKED OUT</option>
+          </select>
         </div>
-
-       
-        
-
+        <div className="inputbox">
+          <input type="text" value={guestNotes} placeholder='Guest Notes' onChange={e => setGuestNotes(e.target.value)} />
+        </div>
         <button type="submit" className='sumbitButton'>Submit</button>
       </form>
     </div>

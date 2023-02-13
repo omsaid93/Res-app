@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ReservationList.css";
+import { HiChevronUpDown } from "react-icons/hi2"
 // states :::::::::::
 const ReservationList = (props) => {
   const [filteredReservations, setFilteredReservations] = useState(
@@ -55,6 +56,22 @@ const ReservationList = (props) => {
     );
     setSortDirection(sortDirection === "asc" ? "desc" : "asc");
   };
+  const handleSortByGuestNumber = () => {
+    setReservations(
+      reservations.sort((c, d) => {
+        const quantityA = c.quantity;
+        const quantityB = d.quantity;
+        if (sortDirection === "asc") {
+          return quantityA - quantityB;
+        } else {
+          return quantityB - quantityA;
+        }
+      })
+    );
+    setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+  };
+
+
   //   search :::::
 
   useEffect(() => {
@@ -109,6 +126,20 @@ const ReservationList = (props) => {
       })
     );
   }, [sortDirection, filteredReservations]);
+  useEffect(() => {
+    setFilteredReservations(
+      filteredReservations.sort((c, d) => {
+        const quantityA = c.quantity;
+        const quantityB = d.quantity;
+        if (sortDirection === "asc") {
+          return quantityA - quantityB;
+        } else {
+          return quantityB - quantityA;
+        }
+      })
+    );
+  }, [sortDirection, filteredReservations]);
+
 
   return (
     <div>
@@ -186,20 +217,20 @@ const ReservationList = (props) => {
           </select>
         </div>
       </div>
-      <button onClick={handleSortByGuestName}>Sort by Guest Name</button>
 
       {/* the form ::::: */}
 
       <table>
         <thead>
           <tr>
-            <th>FirstName</th>
+            <th onClick={handleSortByGuestName}>FirstName <HiChevronUpDown /> </th>
             <th>LastName</th>
             <th>DateStart</th>
             <th>DateEnd</th>
             <th>Shift</th>
             <th>Area</th>
             <th>Status</th>
+            <th onClick={handleSortByGuestNumber}>Quantity <HiChevronUpDown /> </th>
           </tr>
         </thead>
         <tbody>
@@ -212,6 +243,7 @@ const ReservationList = (props) => {
               <td>{reservation.shift}</td>
               <td>{reservation.area}</td>
               <td>{reservation.status}</td>
+              <td>{reservation.quantity}</td>
             </tr>
           ))}
         </tbody>

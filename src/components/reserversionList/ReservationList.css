@@ -2,14 +2,23 @@ body {
     margin: 0;
     font-family: sans-serif;
     font-weight: 100;
+    background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/classy-restaurant.jpg');
 }
 
 .title{
     text-align: center;
-    color: #55608f;
+    color: white;
+}
+.filter{
+    text-align: center;
+    margin-top: 10px;
+    
 }
 .filteri{
-    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    
 }
 
 table {
@@ -28,6 +37,10 @@ th, td {
 }
 th {
     text-align: left;
+    color: white;
+}
+th:hover {
+    cursor: pointer;
 }
 thead th {
     background-color: #55608f;
@@ -48,3 +61,14 @@ tbody td:hover:before {
     background-color: rgba(255,255,255,0.2);
     z-index: -1;
 }
+
+.filteri input {
+    width: 15%;
+    height: 11px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }

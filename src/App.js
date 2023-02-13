@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/homePage/Home";
 import ReservationList from "./components/reserversionList/ReservationList";
-import NotFound from "./pages/notfound/Notfound"
+import NotFound from "./pages/notfound/NotFound"
 import Reservation from "./pages/Reservation/Reservation";
 import data from "./data/data.json";
 import NavBar from "./components/navbar/NavBar";
+// import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   console.log(reservationData);
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
@@ -40,6 +41,7 @@ function App() {
           element={<ReservationList reservations={reservationData} />}
         />
       </Routes>
+      {/* <Footer/> */}
     </div>
   );
 }
