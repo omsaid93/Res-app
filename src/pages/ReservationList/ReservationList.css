@@ -4,15 +4,32 @@ body {
     font-weight: 100;
     background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/classy-restaurant.jpg');
 }
+.filter label{
+    color:white;
+    margin: 15px;
+}
 
 .title{
     text-align: center;
     color: white;
+    margin-top: 20px;
 }
 .filter{
     text-align: center;
     margin-top: 10px;
+
     
+}
+.filter .status{
+    margin-left: -11.5px;
+}
+.filter select {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    background: #55608f7d;
+    color: white;
+    border: 1px solid white;
 }
 .filteri{
     display: flex;

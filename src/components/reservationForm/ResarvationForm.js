@@ -8,11 +8,11 @@ function ReservationCard(props) {
   const [dateFrom, setDateFrom] = useState('');
   const [businessDate, setBusinessDate] = useState('');
   const [dateTo, setDateTo] = useState('');
-  const [shift, setShift] = useState('');
-  const [area, setArea] = useState('');
+  const [shift, setShift] = useState('BREAKFAST');
+  const [area, setArea] = useState('BAR');
   const [quantity, setQuantity] = useState('');
   const [guestNotes, setGuestNotes] = useState('');
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState('CONFIRMED');
   const [counter, setCounter] = useState(parseInt(localStorage.getItem('counter')) || 20);
 
   const navigate = useNavigate();
@@ -52,17 +52,21 @@ function ReservationCard(props) {
     <div >
       <form onSubmit={handleSubmit} className='center' >
         <div className="inputbox">
-          <input type="text" required={true} value={firstName} placeholder='First name' onChange={e => setFirstName(e.target.value)} />
+          
+          <input type="text" required={true} value={firstName} onChange={e => setFirstName(e.target.value)} ></input>
+          <span>First name</span>
         </div>
         <div className="inputbox">
-          <input type="text" required={true} value={lastName} placeholder='Last name' onChange={e => setLastName(e.target.value)} />
+          <input type="text" required={true} value={lastName}  onChange={e => setLastName(e.target.value)} />
+          <span>Last name</span>
         </div>
         <div className="inputbox">
-          <input type="number" required={true} value={quantity} placeholder='Quantity' onChange={e => {
+          <input type="number" required={true} value={quantity} onChange={e => {
             if (e.target.value >= 0) {
               setQuantity(e.target.value);
             }
           }} />
+          <span>Quantity</span>
         </div>
         <div className="inputbox">
           <label>businessDate</label>
@@ -79,7 +83,7 @@ function ReservationCard(props) {
         <div className="inputbox">
           <label> Shift:</label>
           <select value={shift} onChange={e => setShift(e.target.value)}>
-            <option defaultValue="BREAKFAST">BREAKFAST</option>
+            <option Value="BREAKFAST"selected>BREAKFAST</option>
             <option value="LUNCH">LUNCH</option>
             <option value="DINNER">DINNER</option>
           </select>
@@ -87,21 +91,22 @@ function ReservationCard(props) {
         <div className="inputbox">
           <label>Area:</label>
           <select value={area} onChange={e => setArea(e.target.value)}>
-            <option defaultValue="BAR">BAR</option>
+            <option value="BAR" selected>BAR</option>
             <option value="MAIN ROOM">MAIN ROOM</option>
           </select>
         </div>
         <div className="inputbox">
           <label>status:</label>
           <select value={status} onChange={e => setStatus(e.target.value)}>
-            <option value="CONFIRMED">CONFIRMED</option>
+            <option value="CONFIRMED"selected>CONFIRMED</option>
             <option value="NOT CONFIRMED">NOT CONFIRMED</option>
             <option value="SEATED">SEATED</option>
             <option value="CHECKED OUT">CHECKED OUT</option>
           </select>
         </div>
         <div className="inputbox">
-          <input type="text" value={guestNotes} placeholder='Guest Notes' onChange={e => setGuestNotes(e.target.value)} />
+        <span>Guest Notes</span>
+          <input type="text" value={guestNotes} onChange={e => setGuestNotes(e.target.value)} />
         </div>
         <button type="submit" className='sumbitButton'>Submit</button>
       </form>

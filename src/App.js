@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/homePage/Home";
-import ReservationList from "./components/reserversionList/ReservationList";
+import ReservationList from "./pages/ReservationList/ReservationList";
 import NotFound from "./pages/notfound/NotFound"
 import Reservation from "./pages/Reservation/Reservation";
 import data from "./data/data.json";

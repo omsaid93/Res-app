@@ -1,4 +1,36 @@
 .home{
-    color:white;
     text-align: center;
+    margin-top: 60px;
+}
+h1{
+ letter-spacing: 1px;
+ font-size: 80px;
+ width: 60%;
+ height: 65px;
+ border-radius: 25px;
+ margin: 30px auto;
+ color: white; 
+ font-family: cursive;
+
+}
+button{
+    width: 20%;
+    background: rgb(70, 175, 92);
+    color: #fff;
+    border: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 20px;
+    margin: 50px;
+}
+p{
+    color:white;
+    font-size: 30px;
+    width: 70%;
+    margin: 180px auto 0;
+}
+button:hover{
+    background-color:  rgb(148, 92, 39);
+    cursor: pointer;
 }

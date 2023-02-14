@@ -32,6 +32,35 @@
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2em;
+  
+}
+
+
+.center .inputbox span{
+  transform: translateX(0px) translateY(0px);
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  transition: 0.4s;
+  color: #4e5053;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.center .inputbox input:focus ~ span,
+.center .inputbox input:hover ~ span,
+.center .inputbox input:valid ~ span
+{
+  transform: translateX(-10px) translateY(-132px);
+  margin-top: 100px;
+  font-size: 1em;
+  color: black;
+  font-weight: 300;
+}
+.center .inputbox label {
+  transform: translateX(7px) translateY(-19px);
+  
+  position: absolute;
 }
 
 .center .inputbox:last-child {

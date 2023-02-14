@@ -1,4 +1,4 @@
-D'abord j'ai construit le site sur deux composants Majeurs qui sont : ReservationForm et ReservationList
+D'abord j'ai construit le site sur deux composants principaux qui sont : ReservationForm et ReservationList
 
 Le premier composant représente un formulaire de réservation pour un restaurant. Il importe les modules React et useNavigate du module react-router-dom. Le composant utilise useState pour gérer les states pour les champs du formulaire tels que le nom, le prénom, la date, l'heure, le tour de service, la zone, la quantité (nombre d'invité), les notes des clients et enfin le statut.
 Lorsque le formulaire est validé en cliquant sur le bouton Envoyer, la fonction handleSubmit est appelée. Elle empêche le comportement par défaut de l'événement de soumission et incrémente un compteur qui est stocké dans le localStorage. Elle récupère les données entrées dans le formulaire pour les stocker dans l'objet enteredData.
@@ -9,4 +9,8 @@ Le deuxième composant nous permet d'afficher la liste de réservations déjà i
 Le composant ReservationList définit un état pour chaque fonctionnalité. Par exemple, searchTerm est un état qui enregistre la valeur entrée par l'utilisateur dans le champ de recherche. Le composant utilise plusieurs fonctions de gestion d'état telles que setSearchTerm pour mettre à jour les états en fonction des actions de l'utilisateur.
 Le composant utilise également useEffect pour implémenter les fonctionnalités de filtrage et de tri. Chaque fois que les états liés à ces fonctionnalités sont mis à jour, useEffect effectue une nouvelle filtration ou un nouveau tri des réservations pour correspondre aux nouveaux paramètres.
 Enfin, le composant définit plusieurs fonctions de gestion d'événements qui sont appelées lorsque l'utilisateur effectue une action, telles que handleSearch qui est appelée lorsque l'utilisateur entre une valeur dans le champ de recherche.
+
+
+Si j'avais plus de temps, j'aurais ajouter un handler pour supprimer les ex-réservation (comme une sorte de todo liste), faire un meilleur désign. 
+Concernant les algoritmes, les fonctions handleSortByGuestName et handleSortByGuestNumber utilisent la méthode Array.sort intégrée de JavaScript, qui implémente l'algorithme Timsort. Cela leur donne une complexité temporelle moyenne de O(n * log(n)), où n est le nombre de réservations. Cependant, en cas de besoin, la performance pourrait être améliorée en utilisant un autre algorithme de tri, tel que Heapsort ou Mergesort, qui ont une complexité temporelle de O(n * log(n)) dans les cas moyen et pire, il est de même pour les autre algorithmes des "handlers" qui peuvent être améliorer
 
