@@ -54,11 +54,11 @@ function ReservationCard(props) {
         <div className="inputbox">
           
           <input type="text" required={true} value={firstName} onChange={e => setFirstName(e.target.value)} ></input>
-          <span>First name</span>
+          <span>First name *</span>
         </div>
         <div className="inputbox">
           <input type="text" required={true} value={lastName}  onChange={e => setLastName(e.target.value)} />
-          <span>Last name</span>
+          <span>Last name *</span>
         </div>
         <div className="inputbox">
           <input type="number" required={true} value={quantity} onChange={e => {
@@ -66,10 +66,10 @@ function ReservationCard(props) {
               setQuantity(e.target.value);
             }
           }} />
-          <span>Quantity</span>
+          <span>Quantity *</span>
         </div>
         <div className="inputbox">
-          <label>businessDate</label>
+          <label>businessDate *</label>
           <input type="date" required={true} value={businessDate} onChange={e => setBusinessDate(e.target.value)} />
         </div>
         <div className="inputbox">

@@ -4,25 +4,29 @@ body {
     font-weight: 100;
     background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/classy-restaurant.jpg');
 }
-.filter label{
-    color:white;
+
+.filter label {
+    color: white;
     margin: 15px;
 }
 
-.title{
+.title {
     text-align: center;
     color: white;
     margin-top: 20px;
 }
-.filter{
+
+.filter {
     text-align: center;
     margin-top: 10px;
 
-    
+
 }
-.filter .status{
-    margin-left: -11.5px;
+
+.filter .status {
+    margin-left: 0;
 }
+
 .filter select {
     width: 200px;
     height: 30px;
@@ -31,43 +35,52 @@ body {
     color: white;
     border: 1px solid white;
 }
-.filteri{
+
+.filteri {
     display: flex;
-  justify-content: center;
-  align-items: center;
-    
+    justify-content: center;
+    align-items: center;
+
 }
 
 table {
     width: 800px;
     border-collapse: collapse;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     margin: 30px auto;
     opacity: 0.8;
 }
-th, td {
+
+th,
+td {
     padding: 15px;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     color: black;
 }
+
 th {
     text-align: left;
     color: white;
 }
+
 th:hover {
     cursor: pointer;
 }
+
 thead th {
     background-color: #55608f;
 }
+
 tbody tr:hover {
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
+
 tbody td {
     position: relative;
 }
+
 tbody td:hover:before {
     content: "";
     position: absolute;
@@ -75,7 +88,7 @@ tbody td:hover:before {
     right: 0;
     top: -9999px;
     bottom: -9999px;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     z-index: -1;
 }
 
@@ -88,4 +101,4 @@ tbody td:hover:before {
     border: 2px solid #ccc;
     border-radius: 4px;
     text-align: center;
-  }
+}

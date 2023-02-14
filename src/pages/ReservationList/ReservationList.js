@@ -169,7 +169,7 @@ const ReservationList = (props) => {
           </select>
         </div>
         <div className="filter">
-          <label>Status:</label>
+          <label className="status">Status:</label>
           <select
             value={selectedStatus || ""}
             onChange={(event) => handleStatusFilter(event.target.value)}
