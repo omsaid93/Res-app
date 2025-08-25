@@ -176,7 +176,7 @@ const ReservationForm: React.FC<ReservationCardProps> = ({
 
         {renderInputField("guestNotes", "Guest Notes", "text", false)}
 
-        <button type="submit" className="submit-button">
+        <button type="submit" className="sumbitButton">
           Submit Reservation
         </button>
       </form>
