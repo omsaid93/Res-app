@@ -1,7 +1,7 @@
-import React from "react";
-import './footer.css'
+import React, { JSX } from "react";
+import "./footer.css";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <div className="footer">
       <p>All Rights Reserved. &copy; 2023</p>
