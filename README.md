@@ -123,8 +123,6 @@ npm start
 
 ### Professional UI Components
 
-- Consistent design system
-- Responsive layout
 - Accessible form controls
 - Loading and error states
 
@@ -148,18 +146,6 @@ npm start
 - Prettier formatting
 - Type-safe component props
 - Comprehensive error handling
-
-## 📝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ## 🤝 Support
 
